@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANDYS Travel & Tours | Zim-China Bridge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mandys-green: #228B22;
+            --mandys-orange: #FFA500;
+            --mandys-blue: #1E90FF;
+            --mandys-black: #000000;
+            --dark: #1e2a3a;
+            --light-bg: #f8fafc;
+            --card-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- TYPOGRAPHY ---------- */
+        .zh-sub {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: #4a5a6e;
+            display: block;
+            margin-top: 0.1rem;
+            letter-spacing: 0.5px;
+        }
+        .zh-sub-light {
+            color: #b0c4d9;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--mandys-orange);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ---------- HEADER / NAV ---------- */
+        nav {
+            background: #ffffff;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        .logo-circle {
+            background: var(--mandys-orange);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #000;
+            font-weight: 800;
+            position: relative;
+        }
+        .logo-circle .rhino {
+            font-size: 1.2rem;
+            filter: grayscale(100%) brightness(0);
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-text .mandys {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--mandys-green);
+            letter-spacing: 0.5px;
+        }
+        .logo-text .tours {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--mandys-blue);
+            letter-spacing: 0.3px;
+        }
+        .logo small {
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: #5a6b7c;
+            display: block;
+            margin-top: -0.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-weight: 500;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--mandys-orange);
+        }
+
+        .nav-cta {
+            background: var(--mandys-orange);
+            color: #000 !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+        .nav-cta:hover {
+            background: #e69500 !important;
+            color: #000 !important;
+        }
+
+        /* ---------- HERO ---------- */
+        #hero {
+            padding: 3rem 0 3rem;
+            background: linear-gradient(135deg, #f5f9f5 0%, #ffffff 100%);
+            border-bottom: 4px solid var(--mandys-orange);
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero-text h1 .highlight-green {
+            color: var(--mandys-green);
+        }
+        .hero-text h1 .highlight-blue {
+            color: var(--mandys-blue);
+        }
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #2d4055;
+            margin: 1.2rem 0 0.2rem;
+        }
+        .hero-text .zh-sub {
+            font-size: 1rem;
+            color: #4a5a6e;
+        }
+        .hero-flags {
+            font-size: 3.2rem;
+            letter-spacing: 0.8rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .hero-cta-group {
+            margin-top: 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-primary {
+            background: var(--mandys-orange);
+            color: #000;
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #e69500;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid var(--mandys-green);
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            background: #fff;
+        }
+        .btn-outline:hover {
+            background: var(--mandys-green);
+            color: #fff;
+        }
+
+        .hero-stats {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2.5rem;
+            font-size: 0.9rem;
+        }
+        .hero-stats strong {
+            font-size: 1.5rem;
+            display: block;
+            color: var(--mandys-green);
+        }
+
+        .scholarship-banner {
+            background: #fff9f0;
+            border-left: 6px solid var(--mandys-orange);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .scholarship-banner i {
+            font-size: 2rem;
+            color: var(--mandys-orange);
+        }
+        .scholarship-banner .tag {
+            background: var(--mandys-green);
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* ---------- PACKAGES SECTION ---------- */
+        #packages {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+        }
+        .section-title h2 span {
+            color: var(--mandys-green);
+        }
+        .section-title .zh-sub {
+            font-size: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: #eef2f6;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .tab-btn i {
+            font-size: 1.1rem;
+        }
+        .tab-btn.active {
+            background: var(--mandys-green);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
+        }
+        .tab-btn:hover:not(.active) {
+            background: #dce3eb;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeUp 0.4s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(14px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .package-card {
+            background: #fff;
+            padding: 2rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border-top: 6px solid var(--mandys-orange);
+            transition: transform 0.2s;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+        }
+        .package-card .icon {
+            font-size: 2.2rem;
+            color: var(--mandys-blue);
+            margin-bottom: 0.5rem;
+        }
+        .package-card h3 {
+            font-size: 1.25rem;
+        }
+        .package-card h3 span {
+            color: var(--mandys-green);
+        }
+        .package-card .zh-sub {
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .package-card ul li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f0f2f5;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .package-card ul li i {
+            color: var(--mandys-green);
+            width: 1.2rem;
+            font-size: 0.9rem;
+        }
+        .package-card .highlight-tag {
+            display: inline-block;
+            background: var(--mandys-orange);
+            color: #000;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-top: 0.8rem;
+        }
+
+        .business-note {
+            background: #eaf2eb;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .business-note i {
+            font-size: 1.8rem;
+            color: var(--mandys-green);
+        }
+
+        /* ---------- SCHOLARSHIP EXTRA ---------- */
+        .scholar-note {
+            background: #f0f7ff;
+            border: 2px solid var(--mandys-blue);
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .scholar-note i {
+            font-size: 2.2rem;
+            color: var(--mandys-orange);
+        }
+
+        /* ---------- FREIGHT CALCULATOR ---------- */
+        #freight {
+            padding: 4rem 0;
+            background: #ffffff;
+            border-top: 1px solid #eaeef3;
+            border-bottom: 1px solid #eaeef3;
+        }
+
+        .calculator-box {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 28px;
+            box-shadow: var(--card-shadow);
+        }
+        .calc-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .calc-group {
+            flex: 1 1 180px;
+        }
+        .calc-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .calc-group .zh-sub {
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+        .calc-group select, 
+        .calc-group input {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid #dce3eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: #fff;
+            transition: border 0.2s;
+        }
+        .calc-group select:focus,
+        .calc-group input:focus {
+            outline: none;
+            border-color: var(--mandys-green);
+        }
+        .calc-result {
+            background: var(--mandys-green);
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .calc-result .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .calc-result .zh-sub {
+            color: #d4f0d4;
+        }
+        .calc-hint {
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            color: #4a5a6e;
+        }
+
+        /* ---------- CONTACT ---------- */
+        #contact {
+            padding: 4rem 0;
+            background: var(--dark);
+            color: #eef2f6;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 750px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .contact-details a {
+            color: #dce3eb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        .contact-details a:hover {
+            color: var(--mandys-orange);
+        }
+        .whatsapp-big {
+            background: #25D366;
+            color: #fff !important;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            display: inline-flex;
+            width: fit-content;
+        }
+        .whatsapp-big:hover {
+            background: #1da851 !important;
+            color: #fff !important;
+        }
+
+        .inquiry-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 24px;
+            color: var(--dark);
+        }
+        .inquiry-form h3 {
+            margin-bottom: 1.2rem;
+            color: var(--mandys-green);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .form-group .zh-sub {
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1.5px solid #dce3eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--mandys-green);
+        }
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d4055;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8a9db0;
+        }
+
+        @media (max-width: 700px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem 1.2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.0rem;
+            }
+            .hero-flags {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .tabs .tab-btn {
+                flex: 1 1 100%;
+                justify-content: center;
+            }
+            .calculator-box {
+                padding: 1.5rem;
+            }
+            .calc-result .price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====== NAVIGATION ====== -->
+<nav>
+    <div class="container nav-flex">
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <div class="logo-circle">
+                    <span class="rhino">🦏</span>
+                </div>
+                <div class="logo-text">
+                    <span class="mandys">MANDYS</span>
+                    <span class="tours">Travel &amp; Tours</span>
+                    <small>Zim-China Bridge · 中津桥梁</small>
+                </div>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#packages">Packages <span class="zh-sub" style="display:inline;font-size:0.7rem;">项目</span></a>
+            <a href="#freight">Freight <span class="zh-sub" style="display:inline;font-size:0.7rem;">货运</span></a>
+            <a href="#contact" class="nav-cta"><i class="fas fa-paper-plane"></i> Enquire <span style="font-size:0.7rem;">咨询</span></a>
+        </div>
+    </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section id="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <span class="badge"><i class="fas fa-handshake"></i> Official Partner · 官方合作伙伴</span>
+            <h1>
+                Bridge the <span class="highlight-green">Distance</span>.<br>
+                Explore <span class="highlight-blue">China</span>. 
+                <span class="highlight-green">Grow Zimbabwe.</span>
+                <span class="zh-sub" style="font-size:1.4rem; font-weight:500; color:var(--dark); margin-top:0.2rem;">跨越距离 · 探索中国 · 发展津巴布韦</span>
+            </h1>
+            <p>Your trusted local agency for education, scholarships, and business sourcing.</p>
+            <span class="zh-sub" style="font-size:1rem;">您值得信赖的本地代理机构，提供教育、奖学金与商务考察服务。</span>
+            <div class="hero-flags">🇿🇼 🤝 🇨🇳</div>
+            
+            <div class="hero-cta-group">
+                <a href="#packages" class="btn-primary"><i class="fas fa-compass"></i> View Packages · 查看项目</a>
+                <a href="#contact" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us · 联系我们</a>
+            </div>
+
+            <div class="scholarship-banner">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <strong>🇨🇳 China Awards Government Scholarships to Zimbabwean Students!</strong> 
+                    <span class="zh-sub" style="font-size:0.85rem;">中国授予津巴布韦学生政府奖学金！</span>
+                    <span class="tag">NEW · 最新</span>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div><strong>10,366+</strong> Chinese arrivals (Q1 2026) <span class="zh-sub">+24%</span></div>
+                <div><strong>Zero</strong> Tariff <span class="zh-sub">零关税</span></div>
+                <div><strong>🎓 Scholarships</strong> <span class="zh-sub">政府奖学金</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== PACKAGES ====== -->
+<section id="packages">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Exchange <span>Programmes</span> <span class="zh-sub">我们的交流项目</span></h2>
+            <p style="color: #4a5a6e;">Choose your path – Education, Scholarships, or Business. <br><span class="zh-sub" style="font-size:0.9rem;">选择您的方向 – 教育、奖学金或商务。</span></p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="education"><i class="fas fa-graduation-cap"></i> Education <span style="font-size:0.8rem;">教育</span></button>
+            <button class="tab-btn" data-tab="scholarship"><i class="fas fa-award"></i> Scholarships <span style="font-size:0.8rem;">奖学金</span></button>
+            <button class="tab-btn" data-tab="business"><i class="fas fa-briefcase"></i> Business <span style="font-size:0.8rem;">商务</span></button>
+        </div>
+
+        <!-- EDUCATION TAB -->
+        <div id="education" class="tab-content active">
+            <div class="package-grid">
+                <div class="package-card">
+                    <div class="icon"><i class="fas fa-school"></i></div>
+                    <h3>Future Leaders Study Tour <span class="zh-sub">未来领袖中津文化交流营</span></h3>
+                    <ul>
+                        <li><i class="fas fa-plane"></i> International Flights (Return) · 国际往返机票</li>
+                        <li><i class="fas fa-hotel"></i> Accommodation in China · 中国境内住宿</li>
+                        <li><i class="fas fa-exchange-alt"></i> Transfers &amp; Transport · 接送与交通</li>
+                        <li><i class="fas fa-university"></i> Linkage with Chinese Schools/Unis · 对接中国院校</li>
+                        <li><i class="fas fa-users"></i> Cultural exchange &amp; campus visits · 文化交流与校园参访</li>
+                    </ul>
+                    <span class="highlight-tag">For Schools &amp; Universities · 面向大中小学</span>
+                </div>
+                <div class="package-card">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Custom Group Programmes <span class="zh-sub">定制团体项目</span></h3>
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> Flexible duration (7–21 days) · 灵活时长（7–21天）</li>
+                        <li><i class="fas fa-flag"></i> Mandarin taster sessions · 汉语体验课程</li>
+                        <li><i class="fas fa-building"></i> Company &amp; innovation tours · 企业及创新考察</li>
+                        <li><i class="fas fa-utensils"></i> Meals &amp; sightseeing included · 含餐食与观光</li>
+                        <li><i class="fas fa-headset"></i> 24/7 in-China support · 中国境内全天候支持</li>
+                    </ul>
+                    <span class="highlight-tag">Fully Customisable · 完全可定制</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCHOLARSHIP TAB (NEW) -->
+        <div id="scholarship" class="tab-content">
+            <div class="package-grid">
+                <div class="package-card" style="border-top-color: var(--mandys-blue);">
+                    <div class="icon"><i class="fas fa-award" style="color: var(--mandys-orange);"></i></div>
+                    <h3>Scholarship Success Package <span class="zh-sub">奖学金成功套餐</span></h3>
+                    <ul>
+                        <li><i class="fas fa-plane"></i> Return flights to China · 往返中国机票</li>
+                        <li><i class="fas fa-hotel"></i> Accommodation near university · 大学附近住宿</li>
+                        <li><i class="fas fa-taxi"></i> Airport pickup &amp; transfers · 机场接送与交通</li>
+                        <li><i class="fas fa-passport"></i> Visa application assistance · 签证申请协助</li>
+                        <li><i class="fas fa-info-circle"></i> Pre-departure cultural briefing · 行前文化指导</li>
+                        <li><i class="fas fa-headset"></i> 24/7 emergency support in China · 中国境内紧急支持</li>
+                    </ul>
+                    <span class="highlight-tag">For Scholarship Recipients · 面向奖学金获得者</span>
+                </div>
+                <div class="package-card" style="border-top-color: var(--mandys-blue);">
+                    <div class="icon"><i class="fas fa-user-graduate" style="color: var(--mandys-orange);"></i></div>
+                    <h3>Faculty &amp; Delegation Tours <span class="zh-sub">教师与代表团考察</span></h3>
+                    <ul>
+                        <li><i class="fas fa-university"></i> University partnership meetings · 大学合作洽谈</li>
+                        <li><i class="fas fa-chalkboard"></i> Academic exchange programmes · 学术交流项目</li>
+                        <li><i class="fas fa-building"></i> Research facility visits · 研究机构参访</li>
+                        <li><i class="fas fa-handshake"></i> Government &amp; institutional linkages · 政府与机构对接</li>
+                        <li><i class="fas fa-suitcase"></i> Full logistics &amp; translation support · 全程后勤与翻译</li>
+                    </ul>
+                    <span class="highlight-tag">For Universities &amp; Ministries · 面向高校与部委</span>
+                </div>
+            </div>
+            <div class="scholar-note">
+                <i class="fas fa-newspaper"></i>
+                <div>
+                    <strong>📰 In the news:</strong> China has awarded government scholarships to Zimbabwean students as the two countries deepen cooperation in education, skills and technology transfer. 
+                    <span class="zh-sub">新闻：中国授予津巴布韦学生政府奖学金，两国深化教育、技能与技术转让合作。</span>
+                    <br><span style="font-size:0.8rem; color: var(--mandys-blue);"><i class="fas fa-link"></i> We help scholarship winners get to China stress‑free!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUSINESS TAB -->
+        <div id="business" class="tab-content">
+            <div class="package-grid">
+                <div class="package-card" style="border-top-color: var(--mandys-green);">
+                    <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>China Supply Chain Direct <span class="zh-sub">中国供应链直通车</span></h3>
+                    <ul>
+                        <li><i class="fas fa-passport"></i> Visa application assistance · 签证申请协助</li>
+                        <li><i class="fas fa-plane"></i> Return flights &amp; accommodation · 往返机票及住宿</li>
+                        <li><i class="fas fa-industry"></i> Direct linkage to verified manufacturers · 直连认证厂商</li>
+                        <li><i class="fas fa-tag"></i> Same-category sourcing (electronics, clothing) · 同品类采购</li>
+                        <li><i class="fas fa-ship"></i> Freight forwarding &amp; customs clearance · 货运代理与清关</li>
+                    </ul>
+                    <span class="highlight-tag">Minimum 5 pax · 最少5人</span>
+                </div>
+                <div class="package-card" style="border-top-color: var(--mandys-green);">
+                    <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>End-to-End Trade Support <span class="zh-sub">一站式贸易支持</span></h3>
+                    <ul>
+                        <li><i class="fas fa-file-signature"></i> Supplier negotiation &amp; contracting · 供应商谈判与签约</li>
+                        <li><i class="fas fa-boxes"></i> Quality inspection coordination · 质量检验协调</li>
+                        <li><i class="fas fa-truck"></i> Consolidation &amp; shipping logistics · 集运与物流</li>
+                        <li><i class="fas fa-percent"></i> Zero-tariff advisory · 零关税政策咨询</li>
+                        <li><i class="fas fa-phone-alt"></i> Post-trip follow-up · 出访后跟进</li>
+                    </ul>
+                    <span class="highlight-tag">Full logistics chain · 全物流链条</span>
+                </div>
+            </div>
+            <div class="business-note">
+                <i class="fas fa-lightbulb"></i>
+                <div><strong>Tip / 提示:</strong> Combine business sourcing with a factory tour. We assist with sample consolidation and freight clearance in Zimbabwe. <br><span class="zh-sub">可将商务采购与工厂考察相结合，我们还协助样品集运和津巴布韦清关。</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FREIGHT CALCULATOR ====== -->
+<section id="freight">
+    <div class="container">
+        <div class="section-title">
+            <h2>Freight &amp; Clearance Estimator <span class="zh-sub">货运与清关估算</span></h2>
+            <p style="color: #4a5a6e;">Get a rough cost estimate for shipping from China to Zimbabwe. <br><span class="zh-sub" style="font-size:0.9rem;">获取从中国运往津巴布韦的货物成本粗略估算。</span></p>
+        </div>
+        <div class="calculator-box">
+            <div class="calc-row">
+                <div class="calc-group">
+                    <label>Product Category <span class="zh-sub">产品类别</span></label>
+                    <select id="productCat">
+                        <option value="electronics">Electronics · 电子产品</option>
+                        <option value="clothing">Clothing · 服装</option>
+                        <option value="machinery">Machinery · 机械设备</option>
+                        <option value="general">General Goods · 一般商品</option>
+                    </select>
+                </div>
+                <div class="calc-group">
+                    <label>Total Weight (kg) <span class="zh-sub">总重量（公斤）</span></label>
+                    <input type="number" id="weightKg" value="100" min="1" step="5">
+                </div>
+                <div class="calc-group">
+                    <label>Shipping Mode <span class="zh-sub">运输方式</span></label>
+                    <select id="shipMode">
+                        <option value="air">Air Freight · 空运</option>
+                        <option value="sea">Sea Freight · 海运</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="calculateFreight()" style="width:100%;justify-content:center;">
+                <i class="fas fa-calculator"></i> Estimate Price · 预估费用
+            </button>
+            <div class="calc-result" id="freightResult">
+                <div class="price" id="estimatedPrice">$0.00</div>
+                <span class="zh-sub">Estimated total freight + clearance (rough guide) · 货运+清关预估总费用</span>
+                <div class="calc-hint" style="color:#d4f0d4;">
+                    <i class="fas fa-info-circle"></i> Rates based on average market prices. Final quote depends on volume, port, and specific items.
+                </div>
+            </div>
+            <input type="hidden" id="freightEstimate" value="">
+        </div>
+    </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-title" style="color:#fff;">
+            <h2 style="color:#fff;">Get in <span style="color:var(--mandys-orange);">Touch</span> <span class="zh-sub zh-sub-light">联系我们</span></h2>
+            <p style="color:#b0c4d9;">Send us a message and we will reply within 24 hours. <br><span class="zh-sub zh-sub-light">给我们留言，我们将在24小时内回复。</span></p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-details">
+                <h3 style="color:#fff; font-size:1.3rem;"><i class="fas fa-phone-alt"></i> Contact · 联系方式</h3>
+                <a href="tel:+263[YourPhone]"><i class="fas fa-phone-alt"></i> +263 [Your Phone]</a>
+                <a href="mailto:[YourEmail]@gmail.com"><i class="fas fa-envelope"></i> [YourEmail]@gmail.com</a>
+                <a href="https://wa.me/263[YourPhone]?text=Hello%20MANDYS%2C%20I%20am%20interested%20in%20your%20China%20packages" target="_blank" class="whatsapp-big"><i class="fab fa-whatsapp"></i> WhatsApp Now · 立即咨询</a>
+                <div style="margin-top:1.5rem; border-top:1px solid #2d4055; padding-top:1.5rem;">
+                    <p style="color:#b0c4d9;"><i class="fas fa-map-pin"></i> Lake Chivero, Harare, Zimbabwe</p>
+                    <p style="color:#b0c4d9; font-size:0.9rem;"><span class="zh-sub zh-sub-light">津巴布韦哈拉雷奇韦罗湖</span></p>
+                </div>
+            </div>
+            <div class="inquiry-form">
+                <h3><i class="fas fa-pen-alt"></i> Quick Inquiry · 快速咨询</h3>
+                <form action="mailto:[YourEmail]@gmail.com?subject=Website%20Inquiry%20-%20MANDYS" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Full Name <span class="zh-sub">姓名</span></label>
+                        <input type="text" name="Name" placeholder="e.g. Tendai Moyo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address <span class="zh-sub">邮箱</span></label>
+                        <input type="email" name="Email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number <span class="zh-sub">电话</span></label>
+                        <input type="tel" name="Phone" placeholder="+263 77 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Package Interest <span class="zh-sub">感兴趣的项目</span></label>
+                        <select name="Interest">
+                            <option value="Education">Education · 教育交流</option>
+                            <option value="Scholarship">Scholarship Support · 奖学金支持</option>
+                            <option value="Business">Business Sourcing · 商务采购</option>
+                            <option value="Freight">Freight & Clearance · 货运与清关</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message <span class="zh-sub">留言</span></label>
+                        <textarea name="Message" placeholder="Tell us about your group size, scholarship details, or products... 请告知您的团组人数、奖学金详情或产品需求..."></textarea>
+                    </div>
+                    <input type="hidden" name="Freight_Estimate" id="formFreightEstimate" value="">
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                        <i class="fas fa-paper-plane"></i> Send Inquiry · 发送咨询
+                    </button>
+                    <p style="font-size:0.75rem; color:#7a8a9a; margin-top:0.8rem; text-align:center;">
+                        <i class="fas fa-lock"></i> Your data is safe. · 您的数据安全。
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 MANDYS Travel & Tours · Lake Chivero, Harare, Zimbabwe <br>
+            <span style="font-size:0.8rem;">Proudly bridging Zimbabwe and China through education, scholarships, and trade. <br> 自豪地通过教育、奖学金和贸易连接津巴布韦与中国。</span>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = {
+            education: document.getElementById('education'),
+            scholarship: document.getElementById('scholarship'),
+            business: document.getElementById('business')
+        };
+        tabs.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabs.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                Object.values(contents).forEach(c => c.classList.remove('active'));
+                const target = this.dataset.tab;
+                if (contents[target]) contents[target].classList.add('active');
+            });
+        });
+        calculateFreight();
+    });
+
+    function calculateFreight() {
+        const cat = document.getElementById('productCat').value;
+        const weight = parseFloat(document.getElementById('weightKg').value) || 0;
+        const mode = document.getElementById('shipMode').value;
+        let ratePerKg = 0;
+        switch(cat) {
+            case 'electronics': ratePerKg = 8.5; break;
+            case 'clothing': ratePerKg = 6.0; break;
+            case 'machinery': ratePerKg = 7.0; break;
+            case 'general': ratePerKg = 5.5; break;
+            default: ratePerKg = 6.5;
+        }
+        let multiplier = (mode === 'air') ? 1.8 : 0.6;
+        let total = (weight * ratePerKg * multiplier) + 50;
+        if (total < 0) total = 0;
+        document.getElementById('estimatedPrice').textContent = '$' + total.toFixed(2);
+        document.getElementById('freightEstimate').value = total.toFixed(2);
+        document.getElementById('formFreightEstimate').value = total.toFixed(2);
+    }
+    document.querySelectorAll('#productCat, #weightKg, #shipMode').forEach(el => {
+        el.addEventListener('change', calculateFreight);
+        el.addEventListener('input', calculateFreight);
+    });
+</script>
+</body>
+</html>
