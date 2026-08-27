@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lake Chivero Travel Consultancy | Zim-China Bridge</title>
-    <!-- Font Awesome for icons (free CDN) -->
+    <title>MANDYS Travel & Tours | Zim-China Bridge</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ---------- RESET & BASE ---------- */
@@ -15,10 +14,10 @@
         }
 
         :root {
-            --zim-green: #1A7D3A;
-            --zim-yellow: #FFC107;
-            --china-red: #D42D27;
-            --gold: #C9A84C;
+            --mandys-green: #228B22;
+            --mandys-orange: #FFA500;
+            --mandys-blue: #1E90FF;
+            --mandys-black: #000000;
             --dark: #1e2a3a;
             --light-bg: #f8fafc;
             --card-shadow: 0 8px 24px rgba(0,0,0,0.06);
@@ -53,10 +52,10 @@
         }
         .badge {
             display: inline-block;
-            background: var(--zim-green);
-            color: #fff;
+            background: var(--mandys-orange);
+            color: #000;
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 700;
             padding: 0.2rem 0.9rem;
             border-radius: 30px;
             letter-spacing: 0.5px;
@@ -66,7 +65,7 @@
         /* ---------- HEADER / NAV ---------- */
         nav {
             background: #ffffff;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             position: sticky;
             top: 0;
@@ -81,18 +80,56 @@
         }
 
         .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--zim-green);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
         }
-        .logo span {
-            color: var(--china-red);
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        .logo-circle {
+            background: var(--mandys-orange);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #000;
+            font-weight: 800;
+            position: relative;
+        }
+        .logo-circle .rhino {
+            font-size: 1.2rem;
+            filter: grayscale(100%) brightness(0);
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .logo-text .mandys {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--mandys-green);
+            letter-spacing: 0.5px;
+        }
+        .logo-text .tours {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--mandys-blue);
+            letter-spacing: 0.3px;
         }
         .logo small {
-            font-size: 0.7rem;
+            font-size: 0.55rem;
             font-weight: 400;
             color: #5a6b7c;
             display: block;
+            margin-top: -0.1rem;
         }
 
         .nav-links {
@@ -108,26 +145,26 @@
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: var(--china-red);
+            color: var(--mandys-orange);
         }
 
         .nav-cta {
-            background: var(--china-red);
-            color: #fff !important;
+            background: var(--mandys-orange);
+            color: #000 !important;
             padding: 0.4rem 1.2rem;
             border-radius: 40px;
-            font-weight: 600;
+            font-weight: 700;
         }
         .nav-cta:hover {
-            background: #b31f1f !important;
-            color: #fff !important;
+            background: #e69500 !important;
+            color: #000 !important;
         }
 
         /* ---------- HERO ---------- */
         #hero {
-            padding: 4rem 0 3.5rem;
-            background: linear-gradient(135deg, #f0f5f0 0%, #ffffff 100%);
-            border-bottom: 4px solid var(--zim-yellow);
+            padding: 3rem 0 3rem;
+            background: linear-gradient(135deg, #f5f9f5 0%, #ffffff 100%);
+            border-bottom: 4px solid var(--mandys-orange);
         }
 
         .hero-grid {
@@ -145,10 +182,10 @@
             line-height: 1.2;
         }
         .hero-text h1 .highlight-green {
-            color: var(--zim-green);
+            color: var(--mandys-green);
         }
-        .hero-text h1 .highlight-red {
-            color: var(--china-red);
+        .hero-text h1 .highlight-blue {
+            color: var(--mandys-blue);
         }
         .hero-text p {
             font-size: 1.15rem;
@@ -172,12 +209,12 @@
             gap: 1rem;
         }
         .btn-primary {
-            background: var(--china-red);
-            color: #fff;
+            background: var(--mandys-orange);
+            color: #000;
             padding: 0.8rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
@@ -186,12 +223,12 @@
             cursor: pointer;
         }
         .btn-primary:hover {
-            background: #a81c1c;
+            background: #e69500;
         }
         .btn-outline {
             background: transparent;
             color: var(--dark);
-            border: 2px solid var(--zim-green);
+            border: 2px solid var(--mandys-green);
             padding: 0.8rem 2.2rem;
             border-radius: 50px;
             text-decoration: none;
@@ -204,7 +241,7 @@
             background: #fff;
         }
         .btn-outline:hover {
-            background: var(--zim-green);
+            background: var(--mandys-green);
             color: #fff;
         }
 
@@ -217,7 +254,31 @@
         .hero-stats strong {
             font-size: 1.5rem;
             display: block;
-            color: var(--zim-green);
+            color: var(--mandys-green);
+        }
+
+        .scholarship-banner {
+            background: #fff9f0;
+            border-left: 6px solid var(--mandys-orange);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .scholarship-banner i {
+            font-size: 2rem;
+            color: var(--mandys-orange);
+        }
+        .scholarship-banner .tag {
+            background: var(--mandys-green);
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
         }
 
         /* ---------- PACKAGES SECTION ---------- */
@@ -232,11 +293,13 @@
         .section-title h2 {
             font-size: 2.2rem;
         }
+        .section-title h2 span {
+            color: var(--mandys-green);
+        }
         .section-title .zh-sub {
             font-size: 1rem;
         }
 
-        /* Tabs */
         .tabs {
             display: flex;
             justify-content: center;
@@ -262,9 +325,9 @@
             font-size: 1.1rem;
         }
         .tab-btn.active {
-            background: var(--zim-green);
+            background: var(--mandys-green);
             color: #fff;
-            box-shadow: 0 4px 12px rgba(26, 125, 58, 0.3);
+            box-shadow: 0 4px 12px rgba(34, 139, 34, 0.3);
         }
         .tab-btn:hover:not(.active) {
             background: #dce3eb;
@@ -295,7 +358,7 @@
             padding: 2rem 1.8rem;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
-            border-left: 6px solid var(--gold);
+            border-top: 6px solid var(--mandys-orange);
             transition: transform 0.2s;
         }
         .package-card:hover {
@@ -303,12 +366,14 @@
         }
         .package-card .icon {
             font-size: 2.2rem;
-            color: var(--china-red);
+            color: var(--mandys-blue);
             margin-bottom: 0.5rem;
         }
         .package-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 0.3rem;
+        }
+        .package-card h3 span {
+            color: var(--mandys-green);
         }
         .package-card .zh-sub {
             font-size: 0.85rem;
@@ -327,14 +392,14 @@
             font-size: 0.95rem;
         }
         .package-card ul li i {
-            color: var(--zim-green);
+            color: var(--mandys-green);
             width: 1.2rem;
             font-size: 0.9rem;
         }
         .package-card .highlight-tag {
             display: inline-block;
-            background: var(--zim-yellow);
-            color: #1e2a3a;
+            background: var(--mandys-orange);
+            color: #000;
             padding: 0.15rem 0.8rem;
             border-radius: 30px;
             font-size: 0.7rem;
@@ -354,7 +419,24 @@
         }
         .business-note i {
             font-size: 1.8rem;
-            color: var(--zim-green);
+            color: var(--mandys-green);
+        }
+
+        /* ---------- SCHOLARSHIP EXTRA ---------- */
+        .scholar-note {
+            background: #f0f7ff;
+            border: 2px solid var(--mandys-blue);
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .scholar-note i {
+            font-size: 2.2rem;
+            color: var(--mandys-orange);
         }
 
         /* ---------- FREIGHT CALCULATOR ---------- */
@@ -405,10 +487,10 @@
         .calc-group select:focus,
         .calc-group input:focus {
             outline: none;
-            border-color: var(--zim-green);
+            border-color: var(--mandys-green);
         }
         .calc-result {
-            background: var(--zim-green);
+            background: var(--mandys-green);
             color: #fff;
             padding: 1.5rem;
             border-radius: 16px;
@@ -428,7 +510,7 @@
             color: #4a5a6e;
         }
 
-        /* ---------- INQUIRY / CONTACT ---------- */
+        /* ---------- CONTACT ---------- */
         #contact {
             padding: 4rem 0;
             background: var(--dark);
@@ -462,7 +544,7 @@
             transition: color 0.2s;
         }
         .contact-details a:hover {
-            color: var(--gold);
+            color: var(--mandys-orange);
         }
         .whatsapp-big {
             background: #25D366;
@@ -486,6 +568,7 @@
         }
         .inquiry-form h3 {
             margin-bottom: 1.2rem;
+            color: var(--mandys-green);
         }
         .form-group {
             margin-bottom: 1.2rem;
@@ -515,7 +598,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--zim-green);
+            border-color: var(--mandys-green);
         }
         .form-group textarea {
             min-height: 80px;
@@ -531,7 +614,6 @@
             color: #8a9db0;
         }
 
-        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 700px) {
             .nav-flex {
                 flex-direction: column;
@@ -570,10 +652,18 @@
 <!-- ====== NAVIGATION ====== -->
 <nav>
     <div class="container nav-flex">
-        <div class="logo">
-            Lake Chivero <span>Travel</span>
-            <small>Zim-China Bridge Consultancy · 中津桥梁咨询</small>
-        </div>
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <div class="logo-circle">
+                    <span class="rhino">🦏</span>
+                </div>
+                <div class="logo-text">
+                    <span class="mandys">MANDYS</span>
+                    <span class="tours">Travel &amp; Tours</span>
+                    <small>Zim-China Bridge · 中津桥梁</small>
+                </div>
+            </div>
+        </a>
         <div class="nav-links">
             <a href="#packages">Packages <span class="zh-sub" style="display:inline;font-size:0.7rem;">项目</span></a>
             <a href="#freight">Freight <span class="zh-sub" style="display:inline;font-size:0.7rem;">货运</span></a>
@@ -589,11 +679,12 @@
             <span class="badge"><i class="fas fa-handshake"></i> Official Partner · 官方合作伙伴</span>
             <h1>
                 Bridge the <span class="highlight-green">Distance</span>.<br>
-                Explore <span class="highlight-red">China</span>. Grow <span class="highlight-green">Zimbabwe</span>.
+                Explore <span class="highlight-blue">China</span>. 
+                <span class="highlight-green">Grow Zimbabwe.</span>
                 <span class="zh-sub" style="font-size:1.4rem; font-weight:500; color:var(--dark); margin-top:0.2rem;">跨越距离 · 探索中国 · 发展津巴布韦</span>
             </h1>
-            <p>Your trusted local agency for education exchanges and business sourcing, backed by strong bilateral ties.</p>
-            <span class="zh-sub" style="font-size:1rem;">您值得信赖的本地代理机构，提供教育与商务考察服务，依托稳固的双边关系。</span>
+            <p>Your trusted local agency for education, scholarships, and business sourcing.</p>
+            <span class="zh-sub" style="font-size:1rem;">您值得信赖的本地代理机构，提供教育、奖学金与商务考察服务。</span>
             <div class="hero-flags">🇿🇼 🤝 🇨🇳</div>
             
             <div class="hero-cta-group">
@@ -601,9 +692,19 @@
                 <a href="#contact" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us · 联系我们</a>
             </div>
 
+            <div class="scholarship-banner">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <strong>🇨🇳 China Awards Government Scholarships to Zimbabwean Students!</strong> 
+                    <span class="zh-sub" style="font-size:0.85rem;">中国授予津巴布韦学生政府奖学金！</span>
+                    <span class="tag">NEW · 最新</span>
+                </div>
+            </div>
+
             <div class="hero-stats">
-                <div><strong>10,366+</strong> Chinese arrivals (Q1 2026) <span class="zh-sub">2026年Q1中国游客入境</span><span class="zh-sub" style="color:var(--zim-green);font-weight:600;">+24%</span></div>
-                <div><strong>Zero</strong> Tariff <span class="zh-sub">非洲对华出口零关税</span></div>
+                <div><strong>10,366+</strong> Chinese arrivals (Q1 2026) <span class="zh-sub">+24%</span></div>
+                <div><strong>Zero</strong> Tariff <span class="zh-sub">零关税</span></div>
+                <div><strong>🎓 Scholarships</strong> <span class="zh-sub">政府奖学金</span></div>
             </div>
         </div>
     </div>
@@ -613,14 +714,14 @@
 <section id="packages">
     <div class="container">
         <div class="section-title">
-            <h2>Our Exchange Programmes <span class="zh-sub">我们的交流项目</span></h2>
-            <p style="color: #4a5a6e;">Choose your path – Education or Business. Both include full logistics support. <br><span class="zh-sub" style="font-size:0.9rem;">选择您的方向 – 教育或商务。两者均包含全程后勤支持。</span></p>
+            <h2>Our Exchange <span>Programmes</span> <span class="zh-sub">我们的交流项目</span></h2>
+            <p style="color: #4a5a6e;">Choose your path – Education, Scholarships, or Business. <br><span class="zh-sub" style="font-size:0.9rem;">选择您的方向 – 教育、奖学金或商务。</span></p>
         </div>
 
-        <!-- Tabs -->
         <div class="tabs">
             <button class="tab-btn active" data-tab="education"><i class="fas fa-graduation-cap"></i> Education <span style="font-size:0.8rem;">教育</span></button>
-            <button class="tab-btn" data-tab="business"><i class="fas fa-briefcase"></i> Business Sourcing <span style="font-size:0.8rem;">商务采购</span></button>
+            <button class="tab-btn" data-tab="scholarship"><i class="fas fa-award"></i> Scholarships <span style="font-size:0.8rem;">奖学金</span></button>
+            <button class="tab-btn" data-tab="business"><i class="fas fa-briefcase"></i> Business <span style="font-size:0.8rem;">商务</span></button>
         </div>
 
         <!-- EDUCATION TAB -->
@@ -653,22 +754,61 @@
             </div>
         </div>
 
+        <!-- SCHOLARSHIP TAB (NEW) -->
+        <div id="scholarship" class="tab-content">
+            <div class="package-grid">
+                <div class="package-card" style="border-top-color: var(--mandys-blue);">
+                    <div class="icon"><i class="fas fa-award" style="color: var(--mandys-orange);"></i></div>
+                    <h3>Scholarship Success Package <span class="zh-sub">奖学金成功套餐</span></h3>
+                    <ul>
+                        <li><i class="fas fa-plane"></i> Return flights to China · 往返中国机票</li>
+                        <li><i class="fas fa-hotel"></i> Accommodation near university · 大学附近住宿</li>
+                        <li><i class="fas fa-taxi"></i> Airport pickup &amp; transfers · 机场接送与交通</li>
+                        <li><i class="fas fa-passport"></i> Visa application assistance · 签证申请协助</li>
+                        <li><i class="fas fa-info-circle"></i> Pre-departure cultural briefing · 行前文化指导</li>
+                        <li><i class="fas fa-headset"></i> 24/7 emergency support in China · 中国境内紧急支持</li>
+                    </ul>
+                    <span class="highlight-tag">For Scholarship Recipients · 面向奖学金获得者</span>
+                </div>
+                <div class="package-card" style="border-top-color: var(--mandys-blue);">
+                    <div class="icon"><i class="fas fa-user-graduate" style="color: var(--mandys-orange);"></i></div>
+                    <h3>Faculty &amp; Delegation Tours <span class="zh-sub">教师与代表团考察</span></h3>
+                    <ul>
+                        <li><i class="fas fa-university"></i> University partnership meetings · 大学合作洽谈</li>
+                        <li><i class="fas fa-chalkboard"></i> Academic exchange programmes · 学术交流项目</li>
+                        <li><i class="fas fa-building"></i> Research facility visits · 研究机构参访</li>
+                        <li><i class="fas fa-handshake"></i> Government &amp; institutional linkages · 政府与机构对接</li>
+                        <li><i class="fas fa-suitcase"></i> Full logistics &amp; translation support · 全程后勤与翻译</li>
+                    </ul>
+                    <span class="highlight-tag">For Universities &amp; Ministries · 面向高校与部委</span>
+                </div>
+            </div>
+            <div class="scholar-note">
+                <i class="fas fa-newspaper"></i>
+                <div>
+                    <strong>📰 In the news:</strong> China has awarded government scholarships to Zimbabwean students as the two countries deepen cooperation in education, skills and technology transfer. 
+                    <span class="zh-sub">新闻：中国授予津巴布韦学生政府奖学金，两国深化教育、技能与技术转让合作。</span>
+                    <br><span style="font-size:0.8rem; color: var(--mandys-blue);"><i class="fas fa-link"></i> We help scholarship winners get to China stress‑free!</span>
+                </div>
+            </div>
+        </div>
+
         <!-- BUSINESS TAB -->
         <div id="business" class="tab-content">
             <div class="package-grid">
-                <div class="package-card">
+                <div class="package-card" style="border-top-color: var(--mandys-green);">
                     <div class="icon"><i class="fas fa-shipping-fast"></i></div>
                     <h3>China Supply Chain Direct <span class="zh-sub">中国供应链直通车</span></h3>
                     <ul>
                         <li><i class="fas fa-passport"></i> Visa application assistance · 签证申请协助</li>
                         <li><i class="fas fa-plane"></i> Return flights &amp; accommodation · 往返机票及住宿</li>
                         <li><i class="fas fa-industry"></i> Direct linkage to verified manufacturers · 直连认证厂商</li>
-                        <li><i class="fas fa-tag"></i> Same-category sourcing (electronics, clothing) · 同品类采购（电子、服装等）</li>
+                        <li><i class="fas fa-tag"></i> Same-category sourcing (electronics, clothing) · 同品类采购</li>
                         <li><i class="fas fa-ship"></i> Freight forwarding &amp; customs clearance · 货运代理与清关</li>
                     </ul>
-                    <span class="highlight-tag">Minimum 5 pax · 最少5人成团</span>
+                    <span class="highlight-tag">Minimum 5 pax · 最少5人</span>
                 </div>
-                <div class="package-card">
+                <div class="package-card" style="border-top-color: var(--mandys-green);">
                     <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
                     <h3>End-to-End Trade Support <span class="zh-sub">一站式贸易支持</span></h3>
                     <ul>
@@ -676,7 +816,7 @@
                         <li><i class="fas fa-boxes"></i> Quality inspection coordination · 质量检验协调</li>
                         <li><i class="fas fa-truck"></i> Consolidation &amp; shipping logistics · 集运与物流</li>
                         <li><i class="fas fa-percent"></i> Zero-tariff advisory · 零关税政策咨询</li>
-                        <li><i class="fas fa-phone-alt"></i> Post-trip follow-up · 出访后跟进服务</li>
+                        <li><i class="fas fa-phone-alt"></i> Post-trip follow-up · 出访后跟进</li>
                     </ul>
                     <span class="highlight-tag">Full logistics chain · 全物流链条</span>
                 </div>
@@ -689,14 +829,13 @@
     </div>
 </section>
 
-<!-- ====== FREIGHT & CLEARANCE CALCULATOR ====== -->
+<!-- ====== FREIGHT CALCULATOR ====== -->
 <section id="freight">
     <div class="container">
         <div class="section-title">
-            <h2>Freight &amp; Clearance Estimator <span class="zh-sub">货运与清关估算工具</span></h2>
-            <p style="color: #4a5a6e;">Get a rough cost estimate for shipping your goods from China to Zimbabwe. <br><span class="zh-sub" style="font-size:0.9rem;">获取从中国运往津巴布韦的货物成本粗略估算。</span></p>
+            <h2>Freight &amp; Clearance Estimator <span class="zh-sub">货运与清关估算</span></h2>
+            <p style="color: #4a5a6e;">Get a rough cost estimate for shipping from China to Zimbabwe. <br><span class="zh-sub" style="font-size:0.9rem;">获取从中国运往津巴布韦的货物成本粗略估算。</span></p>
         </div>
-
         <div class="calculator-box">
             <div class="calc-row">
                 <div class="calc-group">
@@ -723,52 +862,39 @@
             <button class="btn-primary" onclick="calculateFreight()" style="width:100%;justify-content:center;">
                 <i class="fas fa-calculator"></i> Estimate Price · 预估费用
             </button>
-
             <div class="calc-result" id="freightResult">
                 <div class="price" id="estimatedPrice">$0.00</div>
-                <span class="zh-sub">Estimated total freight + clearance (rough guide) · 货运+清关预估总费用（粗略参考）</span>
+                <span class="zh-sub">Estimated total freight + clearance (rough guide) · 货运+清关预估总费用</span>
                 <div class="calc-hint" style="color:#d4f0d4;">
                     <i class="fas fa-info-circle"></i> Rates based on average market prices. Final quote depends on volume, port, and specific items.
-                    <span class="zh-sub" style="color:#d4f0d4;">费率基于市场均价。最终报价取决于体积、港口及具体物品。</span>
                 </div>
             </div>
-            
-            <!-- Hidden field to store result for the form -->
             <input type="hidden" id="freightEstimate" value="">
         </div>
     </div>
 </section>
 
-<!-- ====== CONTACT & INQUIRY FORM ====== -->
+<!-- ====== CONTACT ====== -->
 <section id="contact">
     <div class="container">
         <div class="section-title" style="color:#fff;">
-            <h2 style="color:#fff;">Get in Touch <span class="zh-sub zh-sub-light">联系我们</span></h2>
+            <h2 style="color:#fff;">Get in <span style="color:var(--mandys-orange);">Touch</span> <span class="zh-sub zh-sub-light">联系我们</span></h2>
             <p style="color:#b0c4d9;">Send us a message and we will reply within 24 hours. <br><span class="zh-sub zh-sub-light">给我们留言，我们将在24小时内回复。</span></p>
         </div>
-
         <div class="contact-grid">
-            <!-- LEFT: Contact Details -->
             <div class="contact-details">
                 <h3 style="color:#fff; font-size:1.3rem;"><i class="fas fa-phone-alt"></i> Contact · 联系方式</h3>
-                <a href="tel:+263[YourPhone]"><i class="fas fa-phone-alt"></i> +263 [Your Phone] <!-- EDIT THIS --></a>
-                <a href="mailto:[YourEmail]@gmail.com"><i class="fas fa-envelope"></i> [YourEmail]@gmail.com <!-- EDIT THIS --></a>
-                <a href="https://wa.me/263[YourPhone]?text=Hello%20Lake%20Chivero%20Travel%2C%20I%20am%20interested%20in%20your%20China%20packages" target="_blank" class="whatsapp-big"><i class="fab fa-whatsapp"></i> WhatsApp Now · 立即咨询</a>
-                
+                <a href="tel:+263[YourPhone]"><i class="fas fa-phone-alt"></i> +263 [Your Phone]</a>
+                <a href="mailto:[YourEmail]@gmail.com"><i class="fas fa-envelope"></i> [YourEmail]@gmail.com</a>
+                <a href="https://wa.me/263[YourPhone]?text=Hello%20MANDYS%2C%20I%20am%20interested%20in%20your%20China%20packages" target="_blank" class="whatsapp-big"><i class="fab fa-whatsapp"></i> WhatsApp Now · 立即咨询</a>
                 <div style="margin-top:1.5rem; border-top:1px solid #2d4055; padding-top:1.5rem;">
                     <p style="color:#b0c4d9;"><i class="fas fa-map-pin"></i> Lake Chivero, Harare, Zimbabwe</p>
                     <p style="color:#b0c4d9; font-size:0.9rem;"><span class="zh-sub zh-sub-light">津巴布韦哈拉雷奇韦罗湖</span></p>
                 </div>
-                <div>
-                    <p style="color:#b0c4d9;"><i class="fas fa-clock"></i> Mon–Fri 8:00 – 17:00 (CAT) <br><span class="zh-sub zh-sub-light">周一至周五 上午8:00 – 下午5:00 (中非时间)</span></p>
-                </div>
             </div>
-
-            <!-- RIGHT: Inquiry Form -->
             <div class="inquiry-form">
                 <h3><i class="fas fa-pen-alt"></i> Quick Inquiry · 快速咨询</h3>
-                <form action="mailto:[YourEmail]@gmail.com?subject=Website%20Inquiry%20-%20Lake%20Chivero%20Travel" method="post" enctype="text/plain">
-                    <!-- EDIT the mailto above with YOUR email -->
+                <form action="mailto:[YourEmail]@gmail.com?subject=Website%20Inquiry%20-%20MANDYS" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label>Full Name <span class="zh-sub">姓名</span></label>
                         <input type="text" name="Name" placeholder="e.g. Tendai Moyo" required>
@@ -785,44 +911,40 @@
                         <label>Package Interest <span class="zh-sub">感兴趣的项目</span></label>
                         <select name="Interest">
                             <option value="Education">Education · 教育交流</option>
+                            <option value="Scholarship">Scholarship Support · 奖学金支持</option>
                             <option value="Business">Business Sourcing · 商务采购</option>
                             <option value="Freight">Freight & Clearance · 货运与清关</option>
-                            <option value="Custom">Custom / Other · 定制/其他</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Message <span class="zh-sub">留言</span></label>
-                        <textarea name="Message" placeholder="Tell us about your group size, products, or travel dates... 请告知您的团组人数、产品需求或出行日期..."></textarea>
+                        <textarea name="Message" placeholder="Tell us about your group size, scholarship details, or products... 请告知您的团组人数、奖学金详情或产品需求..."></textarea>
                     </div>
-                    <!-- Hidden freight estimate from the calculator -->
                     <input type="hidden" name="Freight_Estimate" id="formFreightEstimate" value="">
                     <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
                         <i class="fas fa-paper-plane"></i> Send Inquiry · 发送咨询
                     </button>
                     <p style="font-size:0.75rem; color:#7a8a9a; margin-top:0.8rem; text-align:center;">
-                        <i class="fas fa-lock"></i> Your data is safe. We respect your privacy. · 您的数据安全，我们尊重您的隐私。
+                        <i class="fas fa-lock"></i> Your data is safe. · 您的数据安全。
                     </p>
                 </form>
             </div>
         </div>
-
         <div class="footer-bottom">
-            &copy; 2026 Lake Chivero Travel Consultancy · Lake Chivero, Harare, Zimbabwe <br>
-            <span style="font-size:0.8rem;">Proudly bridging Zimbabwe and China through education and trade. <br> 自豪地通过教育和贸易连接津巴布韦与中国。</span>
+            &copy; 2026 MANDYS Travel & Tours · Lake Chivero, Harare, Zimbabwe <br>
+            <span style="font-size:0.8rem;">Proudly bridging Zimbabwe and China through education, scholarships, and trade. <br> 自豪地通过教育、奖学金和贸易连接津巴布韦与中国。</span>
         </div>
     </div>
 </section>
 
-<!-- ====== JAVASCRIPT ====== -->
 <script>
-    // ---------- TABS ----------
     document.addEventListener('DOMContentLoaded', function() {
         const tabs = document.querySelectorAll('.tab-btn');
         const contents = {
             education: document.getElementById('education'),
+            scholarship: document.getElementById('scholarship'),
             business: document.getElementById('business')
         };
-
         tabs.forEach(btn => {
             btn.addEventListener('click', function() {
                 tabs.forEach(b => b.classList.remove('active'));
@@ -832,18 +954,13 @@
                 if (contents[target]) contents[target].classList.add('active');
             });
         });
-
-        // Initial calculation for freight
         calculateFreight();
     });
 
-    // ---------- FREIGHT CALCULATOR ----------
     function calculateFreight() {
         const cat = document.getElementById('productCat').value;
         const weight = parseFloat(document.getElementById('weightKg').value) || 0;
         const mode = document.getElementById('shipMode').value;
-
-        // Base rates (USD per kg) - rough estimates including clearance
         let ratePerKg = 0;
         switch(cat) {
             case 'electronics': ratePerKg = 8.5; break;
@@ -852,32 +969,17 @@
             case 'general': ratePerKg = 5.5; break;
             default: ratePerKg = 6.5;
         }
-
-        // Mode multiplier: Air is faster but pricier; Sea is cheaper but slower
-        let multiplier = 1.0;
-        if (mode === 'air') multiplier = 1.8;    // Air freight premium
-        else multiplier = 0.6;                    // Sea freight discount
-
-        // Base calculation + minimum handling fee
-        let base = weight * ratePerKg * multiplier;
-        let handling = 50; // flat handling/clearance fee
-        let total = base + handling;
-
-        // Cap for display / sanity
+        let multiplier = (mode === 'air') ? 1.8 : 0.6;
+        let total = (weight * ratePerKg * multiplier) + 50;
         if (total < 0) total = 0;
-
-        // Update display
         document.getElementById('estimatedPrice').textContent = '$' + total.toFixed(2);
         document.getElementById('freightEstimate').value = total.toFixed(2);
         document.getElementById('formFreightEstimate').value = total.toFixed(2);
     }
-
-    // Recalculate on input change
     document.querySelectorAll('#productCat, #weightKg, #shipMode').forEach(el => {
         el.addEventListener('change', calculateFreight);
         el.addEventListener('input', calculateFreight);
     });
 </script>
-
 </body>
 </html>
